@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+from decouple import config 
 
 # config.encoding = "cp1251"
 
@@ -23,10 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-puc@*pgv9r$w*ek*ggd2v042f$o*l)345^+xgir=dyn$%u_6p3"
+SECRET_KEY= config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config("DEBUG")
 
 ALLOWED_HOSTS = []
 
@@ -80,8 +81,12 @@ WSGI_APPLICATION = "selvina_project.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "PGNAME": config("PGNAME"),
+        "PGUSER": config("PGUSER"),
+        "PGPASSWORD": config("PGPASSWORD"),
+        "PGHOST": config("PGHOST"),
+        "PGPORT": config("PGPORT"),
     }
 }
 

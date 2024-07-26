@@ -1,0 +1,1093 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content%}
+  <section id="banner" style="background: hsl(30, 6%, 87%);">
+    <div class="container">
+      <div class="swiper main-swiper">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide py-5">
+            <div class="row banner-content align-items-center">
+              <div class="img-wrapper col-md-5">
+                <img src="{% static 'images/assets/hi.jpg' %}" class="img-fluid">
+              </div>
+              <div class="content-wrapper col-md-7 p-5 mb-5">
+                <div class="secondary-font text-primary text-uppercase mb-4">Save 10 - 20 % off</div>
+                <h2 class="banner-title display-1 fw-normal">Elegance<span class="text-primary">
+                    Redifined</span>
+                </h2>
+                <a href="{% url 'store' %}" class="btn btn-outline-dark btn-lg text-uppercase fs-6 rounded-1">
+                  shop now
+                  <svg width="24" height="24" viewBox="0 0 24 24" class="mb-1">
+                    <use xlink:href="#arrow-right"></use>
+                  </svg></a>
+              </div>
+
+            </div>
+          </div>
+          
+              </div>
+
+            </div>
+          </div>
+          
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-pagination mb-5"></div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="categories">
+    <div class="container my-3 py-5">
+      <div class="row my-5">
+        <div class="col text-center">
+          <a href="#" class="categories-item">
+            <iconify-icon class="category-icon" icon="ph:sneaker-duotone"></iconify-icon>
+            <h5>Sneakers</h5>
+          </a>
+        </div>
+        <div class="col text-center">
+          <a href="#" class="categories-item">
+            <iconify-icon class="category-icon" icon="ph:t-shirt-light"></iconify-icon>
+            <h5>Tops</h5>
+          </a>
+        </div>
+        <div class="col text-center">
+          <a href="#" class="categories-item">
+            <iconify-icon class="category-icon" icon="fluent-emoji-high-contrast:jeans"></iconify-icon>
+            <h5>Bottoms</h5>
+          </a>
+        </div>
+        
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="shop" class="my-5 overflow-hidden">
+    <div class="container pb-5">
+
+      <div class="section-header d-md-flex justify-content-between align-items-center mb-3">
+        <h2 class="display-3 fw-normal">Girls Tops</h2>
+        <div>
+          <a href="{% url 'store' %}" class="btn btn-outline-dark btn-lg text-uppercase fs-6 rounded-1">
+            shop now
+            <svg width="24" height="24" viewBox="0 0 24 24" class="mb-1">
+              <use xlink:href="#arrow-right"></use>
+            </svg></a>
+        </div>
+      </div>
+
+      <div class="products-carousel swiper">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="z-1 position-absolute rounded-3 m-3 px-3 border border-dark-subtle">
+              New
+            </div>
+            <div class="card position-relative">
+              <a href="single-product.html"><img src="{% static 'images/assets/download.jpg' %}" class="img-fluid rounded-4" alt="image"></a>
+              <div class="card-body p-0">
+                <a href="single-product.html">
+                  <h3 class="card-title pt-4 m-0">Tie and dye longsleeves</h3>
+                </a>
+
+                <div class="card-text">
+                  <span class="rating secondary-font">
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    5.0</span>
+
+                  <h3 class="secondary-font text-primary">$18.50</h3>
+
+                  <div class="d-flex flex-wrap mt-3">
+                    <a href="{% url 'cart' %}" class="btn-cart me-3 px-4 pt-3 pb-3">
+                      <h5 class="text-uppercase m-0">Add to Cart</h5>
+                    </a>
+                  
+                    <a href="{% if product.pk %}{% url 'add_to_wishlist' product.pk %}{% endif %}"  class="btn-wishlist px-4 pt-3 ">
+                      <iconify-icon icon="fluent:heart-28-filled" class="fs-5"></iconify-icon>
+                    </a>
+                  </div>
+
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <!-- <div class="z-1 position-absolute rounded-3 m-3 px-3 border border-dark-subtle">
+              New
+            </div> -->
+            <div class="card position-relative">
+              <a href="single-product.html"><img src="{% static 'images/assets/kendra_ultra top.jpg' %}" class="img-fluid rounded-4" alt="image"></a>
+              <div class="card-body p-0">
+                <a href="single-product.html">
+                  <h3 class="card-title pt-4 m-0">Pink kendra ultra top </h3>
+                </a>
+
+                <div class="card-text">
+                  <span class="rating secondary-font">
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    5.0</span>
+
+                  <h3 class="secondary-font text-primary">$13.00</h3>
+
+                  <div class="d-flex flex-wrap mt-3">
+                    <a href="{% url 'cart' %}" class="btn-cart me-3 px-4 pt-3 pb-3">
+                      <h5 class="text-uppercase m-0">Add to Cart</h5>
+                    </a>
+                    <a href="{% if product.pk %}{% url 'add_to_wishlist' product.pk %}{% endif %}" class="btn-wishlist px-4 pt-3 ">
+                      <iconify-icon icon="fluent:heart-28-filled" class="fs-5"></iconify-icon>
+                    </a>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="z-1 position-absolute rounded-3 m-3 px-3 border border-dark-subtle">
+              -10%
+            </div>
+            <div class="card position-relative">
+              <a href="single-product.html"><img src="{% static 'images/assets/Casual Polyster crop top.jpg' %}" class="img-fluid rounded-4" alt="image"></a>
+              <div class="card-body p-0">
+                <a href="single-product.html">
+                  <h3 class="card-title pt-4 m-0">Casual Polyster Crop top</h3>
+                </a>
+
+                <div class="card-text">
+                  <span class="rating secondary-font">
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    5.0</span>
+
+                  <h3 class="secondary-font text-primary">$180.00 now $140.00</h3>
+
+                  <div class="d-flex flex-wrap mt-3">
+                    <a href="{% url 'cart' %}" class="btn-cart me-3 px-4 pt-3 pb-3">
+                      <h5 class="text-uppercase m-0">Add to Cart</h5>
+                    </a>
+                    <a href="{% if product.pk %}{% url 'add_to_wishlist' product.pk %}{% endif %}"  class="btn-wishlist px-4 pt-3 ">
+                      <iconify-icon icon="fluent:heart-28-filled" class="fs-5"></iconify-icon>
+                    </a>
+                  </div>
+
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <!-- <div class="z-1 position-absolute rounded-3 m-3 px-3 border border-dark-subtle">
+              New
+            </div> -->
+            <div class="card position-relative">
+              <a href="single-product.html"><img src="{% static 'images/assets/452602_rollover.jpg' %}" class="img-fluid rounded-4" alt="image"></a>
+              <div class="card-body p-0">
+                <a href="single-product.html">
+                  <h3 class="card-title pt-4 m-0">Sunflower Black Crop Top</h3>
+                </a>
+
+                <div class="card-text">
+                  <span class="rating secondary-font">
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    5.0</span>
+
+                  <h3 class="secondary-font text-primary">$21.15</h3>
+
+                  <div class="d-flex flex-wrap mt-3">
+                    <a href="{% url 'cart' %}" class="btn-cart me-3 px-4 pt-3 pb-3">
+                      <h5 class="text-uppercase m-0">Add to Cart</h5>
+                    </a>
+                    <a href="{% if product.pk %}{% url 'add_to_wishlist' product.pk %}{% endif %}"  class="btn-wishlist px-4 pt-3 ">
+                      <iconify-icon icon="fluent:heart-28-filled" class="fs-5"></iconify-icon>
+                    </a>
+                  </div>
+
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <!-- <div class="z-1 position-absolute rounded-3 m-3 px-3 border border-dark-subtle">
+              New
+            </div> -->
+            <div class="card position-relative">
+              <a href="single-product.html"><img src="{% static 'images/item7.jpg' %}" class="img-fluid rounded-4" alt="image"></a>
+              <div class="card-body p-0">
+                <a href="single-product.html">
+                  <h3 class="card-title pt-4 m-0">Grey hoodie</h3>
+                </a>
+
+                <div class="card-text">
+                  <span class="rating secondary-font">
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    5.0</span>
+
+                  <h3 class="secondary-font text-primary">$18.00</h3>
+
+                  <div class="d-flex flex-wrap mt-3">
+                    <a href="{% url 'cart' %}" class="btn-cart me-3 px-4 pt-3 pb-3">
+                      <h5 class="text-uppercase m-0">Add to Cart</h5>
+                    </a>
+                    <a href="{% if product.pk %}{% url 'add_to_wishlist' product.pk %}{% endif %}"  class="btn-wishlist px-4 pt-3 ">
+                      <iconify-icon icon="fluent:heart-28-filled" class="fs-5"></iconify-icon>
+                    </a>
+                  </div>
+
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <!-- <div class="z-1 position-absolute rounded-3 m-3 px-3 border border-dark-subtle">
+              New
+            </div> -->
+            <div class="card position-relative">
+              <a href="single-product.html"><img  src="{% static 'images/item8.jpg' %}" class="img-fluid rounded-4" alt="image"></a>
+              <div class="card-body p-0">
+                <a href="single-product.html">
+                  <h3 class="card-title pt-4 m-0">Grey hoodie</h3>
+                </a>
+
+                <div class="card-text">
+                  <span class="rating secondary-font">
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    5.0</span>
+
+                  <h3 class="secondary-font text-primary">$18.00</h3>
+
+                  <div class="d-flex flex-wrap mt-3">
+                    <a href="{% url 'cart' %}" class="btn-cart me-3 px-4 pt-3 pb-3">
+                      <h5 class="text-uppercase m-0">Add to Cart</h5>
+                    </a>
+                    <a href="{% if product.pk %}{% url 'add_to_wishlist' product.pk %}{% endif %}"  class="btn-wishlist px-4 pt-3 ">
+                      <iconify-icon icon="fluent:heart-28-filled" class="fs-5"></iconify-icon>
+                    </a>
+                  </div>
+
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- / products-carousel -->
+
+
+    </div>
+  </section>
+
+  <section id="foodies" class="my-5">
+    <div class="container my-5 py-5">
+
+      <div class="section-header d-md-flex justify-content-between align-items-center">
+        <h2 class="display-3 fw-normal">Categories</h2>
+        <div class="mb-4 mb-md-0">
+          <p class="m-0">
+            <button class="filter-button me-4  active" data-filter="*">ALL</button>
+            <button class="filter-button me-4 " data-filter=".tops">TOPS</button>
+            <button class="filter-button me-4 " data-filter=".bottoms">BOTTOMS</button>
+            <button class="filter-button me-4 " data-filter=".sneakers">SNEAKERS</button>
+          </p>
+        </div>
+        <div>
+          <a href="{% url 'store' %}" class="btn btn-outline-dark btn-lg text-uppercase fs-6 rounded-1">
+            shop now
+            <svg width="24" height="24" viewBox="0 0 24 24" class="mb-1">
+              <use xlink:href="#arrow-right"></use>
+            </svg></a>
+        </div>
+      </div>
+
+      <div class="isotope-container row">
+
+        <div class="item cat col-md-4 col-lg-3 my-4">
+          <!-- <div class="z-1 position-absolute rounded-3 m-3 px-3 border border-dark-subtle">
+            New
+          </div> -->
+          <div class="card position-relative">
+            <a href="single-product.html"><img src="{% static 'images/assets/top1.jpg' %}" class="img-fluid rounded-4" alt="image"></a>
+            <div class="card-body p-0">
+              <a href="single-product.html">
+                <h3 class="card-title pt-4 m-0">crop top</h3>
+              </a>
+
+              <div class="card-text">
+                <span class="rating secondary-font">
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  5.0</span>
+
+                <h3 class="secondary-font text-primary">$89.00</h3>
+
+                <div class="d-flex flex-wrap mt-3">
+                  <a href="{% url 'cart' %}" class="btn-cart me-3 px-4 pt-3 pb-3">
+                    <h5 class="text-uppercase m-0">Add to Cart</h5>
+                  </a>
+                  <a href="{% if product.pk %}{% url 'add_to_wishlist' product.pk %}{% endif %}"  class="btn-wishlist px-4 pt-3 ">
+                    <iconify-icon icon="fluent:heart-28-filled" class="fs-5"></iconify-icon>
+                  </a>
+                </div>
+
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="item dog col-md-4 col-lg-3 my-4">
+          <div class="z-1 position-absolute rounded-3 m-3 px-3 border border-dark-subtle">
+            New
+          </div>
+          <div class="card position-relative">
+            <a href="single-product.html"><img src="{% static 'images/assets/denim cargo.jpg' %}" class="img-fluid rounded-4" alt="image"></a>
+            <div class="card-body p-0">
+              <a href="single-product.html">
+                <h3 class="card-title pt-4 m-0">Denim cargo pants</h3>
+              </a>
+
+              <div class="card-text">
+                <span class="rating secondary-font">
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  5.0</span>
+
+                <h3 class="secondary-font text-primary">$739.00</h3>
+
+                <div class="d-flex flex-wrap mt-3">
+                  <a href="{% url 'cart' %}" class="btn-cart me-3 px-4 pt-3 pb-3">
+                    <h5 class="text-uppercase m-0">Add to Cart</h5>
+                  </a>
+                  <a href="{% if product.pk %}{% url 'add_to_wishlist' product.pk %}{% endif %}" class="btn-wishlist px-4 pt-3 ">
+                    <iconify-icon icon="fluent:heart-28-filled" class="fs-5"></iconify-icon>
+                  </a>
+                </div>
+
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="item dog col-md-4 col-lg-3 my-4">
+          <!-- <div class="z-1 position-absolute rounded-3 m-3 px-3 border border-dark-subtle">
+            New
+          </div> -->
+          <div class="card position-relative">
+            <a href="single-product.html"><img src="{% static 'images/assets/grey wideleg cargo.jpg' %}" class="img-fluid rounded-4" alt="image"></a>
+            <div class="card-body p-0">
+              <a href="single-product.html">
+                <h3 class="card-title pt-4 m-0">Grey wideleg cargo pants</h3>
+              </a>
+
+              <div class="card-text">
+                <span class="rating secondary-font">
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  5.0</span>
+
+                <h3 class="secondary-font text-primary">$399.99</h3>
+
+                <div class="d-flex flex-wrap mt-3">
+                  <a href="{% url 'cart' %}" class="btn-cart me-3 px-4 pt-3 pb-3">
+                    <h5 class="text-uppercase m-0">Add to Cart</h5>
+                  </a>
+                  <a href="{% if product.pk %}{% url 'add_to_wishlist' product.pk %}{% endif %}"  class="btn-wishlist px-4 pt-3 ">
+                    <iconify-icon icon="fluent:heart-28-filled" class="fs-5"></iconify-icon>
+                  </a>
+                </div>
+
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="item cat col-md-4 col-lg-3 my-4">
+          <div class="z-1 position-absolute rounded-3 m-3 px-3 border border-dark-subtle">
+            Sold
+          </div>
+          <div class="card position-relative">
+            <a href="single-product.html"><img src="{% static 'images/assets/top2.jpg' %}" class="img-fluid rounded-4" alt="image"></a>
+            <div class="card-body p-0">
+              <a href="single-product.html">
+                <h3 class="card-title pt-4 m-0">Grey hoodie</h3>
+              </a>
+
+              <div class="card-text">
+                <span class="rating secondary-font">
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  5.0</span>
+
+                <h3 class="secondary-font text-primary">$18.00</h3>
+
+                <div class="d-flex flex-wrap mt-3">
+                  <a href="{% url 'cart' %}" class="btn-cart me-3 px-4 pt-3 pb-3">
+                    <h5 class="text-uppercase m-0">Add to Cart</h5>
+                  </a>
+                  <a href="{% if product.pk %}{% url 'add_to_wishlist' product.pk %}{% endif %}"  class="btn-wishlist px-4 pt-3 ">
+                    <iconify-icon icon="fluent:heart-28-filled" class="fs-5"></iconify-icon>
+                  </a>
+                </div>
+
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="item bird col-md-4 col-lg-3 my-4">
+          <!-- <div class="z-1 position-absolute rounded-3 m-3 px-3 border border-dark-subtle">
+            New
+          </div> -->
+          <div class="card position-relative">
+            <a href="single-product.html"><img src="{% static 'images/assets/fashion sneakers.jpg' %}" class="img-fluid rounded-4" alt="image"></a>
+            <div class="card-body p-0">
+              <a href="single-product.html">
+                <h3 class="card-title pt-4 m-0">Fashion sneakers</h3>
+              </a>
+
+              <div class="card-text">
+                <span class="rating secondary-font">
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  5.0</span>
+
+                <h3 class="secondary-font text-primary">$212.90</h3>
+
+                <div class="d-flex flex-wrap mt-3">
+                  <a href="{% url 'cart' %}" class="btn-cart me-3 px-4 pt-3 pb-3">
+                    <h5 class="text-uppercase m-0">Add to Cart</h5>
+                  </a>
+                  <a href="{% if product.pk %}{% url 'add_to_wishlist' product.pk %}{% endif %}"  class="btn-wishlist px-4 pt-3 ">
+                    <iconify-icon icon="fluent:heart-28-filled" class="fs-5"></iconify-icon>
+                  </a>
+                </div>
+
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="item bird col-md-4 col-lg-3 my-4">
+          <!-- <div class="z-1 position-absolute rounded-3 m-3 px-3 border border-dark-subtle">
+            New
+          </div> -->
+          <div class="card position-relative">
+            <a href="single-product.html"><img src="{% static 'images/assets/casual sport.jpg' %}" class="img-fluid rounded-4" alt="image"></a>
+            <div class="card-body p-0">
+              <a href="single-product.html">
+                <h3 class="card-title pt-4 m-0">Casual sport sneaker</h3>
+              </a>
+
+              <div class="card-text">
+                <span class="rating secondary-font">
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  5.0</span>
+
+                <h3 class="secondary-font text-primary">$18.00</h3>
+
+                <div class="d-flex flex-wrap mt-3">
+                  <a href="{% url 'cart' %}" class="btn-cart me-3 px-4 pt-3 pb-3">
+                    <h5 class="text-uppercase m-0">Add to Cart</h5>
+                  </a>
+                  <a href="{% if product.pk %}{% url 'add_to_wishlist' product.pk %}{% endif %}"  class="btn-wishlist px-4 pt-3 ">
+                    <iconify-icon icon="fluent:heart-28-filled" class="fs-5"></iconify-icon>
+                  </a>
+                </div>
+
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="item dog col-md-4 col-lg-3 my-4">
+          <div class="z-1 position-absolute rounded-3 m-3 px-3 border border-dark-subtle">
+            Sale
+          </div>
+          <div class="card position-relative">
+            <a href="single-product.html"><img src="{% static 'images/assets/black denim cargo' %}" class="img-fluid rounded-4" alt="image"></a>
+            <div class="card-body p-0">
+              <a href="single-product.html">
+                <h3 class="card-title pt-4 m-0">Black denim cargo</h3>
+              </a>
+
+              <div class="card-text">
+                <span class="rating secondary-font">
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  5.0</span>
+
+                <h3 class="secondary-font text-primary">$265.00</h3>
+
+                <div class="d-flex flex-wrap mt-3">
+                  <a href="{% url 'cart' %}" class="btn-cart me-3 px-4 pt-3 pb-3">
+                    <h5 class="text-uppercase m-0">Add to Cart</h5>
+                  </a>
+                  <a href="{% if product.pk %}{% url 'add_to_wishlist' product.pk %}{% endif %}"  class="btn-wishlist px-4 pt-3 ">
+                    <iconify-icon icon="fluent:heart-28-filled" class="fs-5"></iconify-icon>
+                  </a>
+                </div>
+
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="item cat col-md-4 col-lg-3 my-4">
+          <!-- <div class="z-1 position-absolute rounded-3 m-3 px-3 border border-dark-subtle">
+            New
+          </div> -->
+          <div class="card position-relative">
+            <a href="single-product.html"><img src="{% static 'images/assets/top4.jpg' %}" class="img-fluid rounded-4" alt="image"></a>
+            <div class="card-body p-0">
+              <a href="single-product.html">
+                <h3 class="card-title pt-4 m-0">Grey hoodie</h3>
+              </a>
+
+              <div class="card-text">
+                <span class="rating secondary-font">
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                  5.0</span>
+
+                <h3 class="secondary-font text-primary">$18.00</h3>
+
+                <div class="d-flex flex-wrap mt-3">
+                  <a href="{% url 'cart' %}" class="btn-cart me-3 px-4 pt-3 pb-3">
+                    <h5 class="text-uppercase m-0">Add to Cart</h5>
+                  </a>
+                  <a href="{% if product.pk %}{% url 'add_to_wishlist' product.pk %}{% endif %}"  class="btn-wishlist px-4 pt-3 ">
+                    <iconify-icon icon="fluent:heart-28-filled" class="fs-5"></iconify-icon>
+                  </a>
+                </div>
+
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <section id="testimonial">
+    <div class="container my-5 py-5">
+      <div class="row">
+        <div class="offset-md-1 col-md-10">
+          <div class="swiper testimonial-swiper">
+            <div class="swiper-wrapper">
+
+              
+              <div class="swiper-slide">
+                <div class="row ">
+                  <div class="col-2">
+                    <iconify-icon icon="ri:double-quotes-l" class="quote-icon text-primary"></iconify-icon>
+                  </div>
+                  <div class="col-md-10 mt-md-5 p-5 pt-0 pt-md-5">
+                    <p class="testimonial-content fs-2">I stumbled upon this ecommerce site and was pleasantly surprised! From the user-friendly interface to the lightning-fast delivery, every aspect exceeded my expectations. Will definitely be my go-to for all future purchases!</p>
+                    <p class="text-black">- Evaline Appiah</p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="row ">
+                  <div class="col-2">
+                    <iconify-icon icon="ri:double-quotes-l" class="quote-icon text-primary"></iconify-icon>
+                  </div>
+                  <div class="col-md-10 mt-md-5 p-5 pt-0 pt-md-5">
+                    <p class="testimonial-content fs-2">This website offers top-notch products and exceptional customer service. I recently had an issue with an order, and their support team went above and beyond to resolve it quickly and efficiently. Highly recommend!</p>
+                    <p class="text-black">- Sally Korankye</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="row ">
+                  <div class="col-2">
+                    <iconify-icon icon="ri:double-quotes-l" class="quote-icon text-primary"></iconify-icon>
+                  </div>
+                  <div class="col-md-10 mt-md-5 p-5 pt-0 pt-md-5">
+                    <p class="testimonial-content fs-2">As someone who's always on the lookout for great deals, this ecommerce platform has become my go-to destination. Their daily deals section is a treasure trove of savings, and I've scored some amazing finds!</p>
+                    <p class="text-black">- Debbie Wilson</p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="row ">
+                  <div class="col-2">
+                    <iconify-icon icon="ri:double-quotes-l" class="quote-icon text-primary"></iconify-icon>
+                  </div>
+                  <div class="col-md-10 mt-md-5 p-5 pt-0 pt-md-5">
+                    <p class="testimonial-content fs-2">I was initially drawn to this ecommerce site because of their eco-friendly initiatives, but I stayed for the incredible shopping experience. It's rare to find a company that's both socially responsible and customer-focused.</p>
+                    <p class="text-black">- Donald M.Kelly</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="row ">
+                  <div class="col-2">
+                    <iconify-icon icon="ri:double-quotes-l" class="quote-icon text-primary"></iconify-icon>
+                  </div>
+                  <div class="col-md-10 mt-md-5 p-5 pt-0 pt-md-5">
+                    <p class="testimonial-content fs-2">Shopping on this ecommerce website feels like a breath of fresh air compared to other online stores. The intuitive interface, extensive product descriptions, and fast shipping have made me a loyal customer for life!</p>
+                    <p class="text-black">- Emily Nkuma</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="swiper-pagination"></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="bestselling" class="my-5 overflow-hidden">
+    <div class="container py-5 mb-5">
+
+      <div class="section-header d-md-flex justify-content-between align-items-center mb-3">
+        <h2 class="display-3 fw-normal">Bottoms</h2>
+        <div>
+          <a href="{% url 'store' %}" class="btn btn-outline-dark btn-lg text-uppercase fs-6 rounded-1">
+            shop now
+            <svg width="24" height="24" viewBox="0 0 24 24" class="mb-1">
+              <use xlink:href="#arrow-right"></use>
+            </svg></a>
+        </div>
+      </div>
+
+      <div class=" swiper bestselling-swiper">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <!-- <div class="z-1 position-absolute rounded-3 m-3 px-3 border border-dark-subtle">
+              New
+            </div> -->
+            <div class="card position-relative">
+              <a href="single-product.html"><img src="{% static 'images/assets/download (1).jpg' %}" class="img-fluid rounded-4" alt="image"></a>
+              <div class="card-body p-0">
+                <a href="single-product.html">
+                  <h3 class="card-title pt-4 m-0">Sky blue cargo jeans</h3>
+                </a>
+
+                <div class="card-text">
+                  <span class="rating secondary-font">
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    5.0</span>
+
+                  <h3 class="secondary-font text-primary">$97.00</h3>
+
+                  <div class="d-flex flex-wrap mt-3">
+                    <a href="{% url 'cart' %}" class="btn-cart me-3 px-4 pt-3 pb-3">
+                      <h5 class="text-uppercase m-0">Add to Cart</h5>
+                    </a>
+                    <a href="{% if product.pk %}{% url 'add_to_wishlist' product.pk %}{% endif %}"  class="btn-wishlist px-4 pt-3 ">
+                      <iconify-icon icon="fluent:heart-28-filled" class="fs-5"></iconify-icon>
+                    </a>
+                  </div>
+
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <!-- <div class="z-1 position-absolute rounded-3 m-3 px-3 border border-dark-subtle">
+              New
+            </div> -->
+            <div class="card position-relative">
+              <a href="single-product.html"><img src="{% static 'images/assets/shorts.jpg' %}" class="img-fluid rounded-4" alt="image"></a>
+              <div class="card-body p-0">
+                <a href="single-product.html">
+                  <h3 class="card-title pt-4 m-0">Green flare gym shorts</h3>
+                </a>
+
+                <div class="card-text">
+                  <span class="rating secondary-font">
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    5.0</span>
+
+                  <h3 class="secondary-font text-primary">$17.00</h3>
+
+                  <div class="d-flex flex-wrap mt-3">
+                    <a href="{% url 'cart' %}" class="btn-cart me-3 px-4 pt-3 pb-3">
+                      <h5 class="text-uppercase m-0">Add to Cart</h5>
+                    </a>
+                    <a href="{% if product.pk %}{% url 'add_to_wishlist' product.pk %}{% endif %}"  class="btn-wishlist px-4 pt-3 ">
+                      <iconify-icon icon="fluent:heart-28-filled" class="fs-5"></iconify-icon>
+                    </a>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="z-1 position-absolute rounded-3 m-3 px-3 border border-dark-subtle">
+              Sale
+            </div>
+            <div class="card position-relative">
+              <a href="single-product.html"><img src="{% static 'images/assets/black wideleg.jpg' %}" class="img-fluid rounded-4" alt="image"></a>
+              <div class="card-body p-0">
+                <a href="single-product.html">
+                  <h3 class="card-title pt-4 m-0">Grey wideleg jeans</h3>
+                </a>
+
+                <div class="card-text">
+                  <span class="rating secondary-font">
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    5.0</span>
+
+                  <h3 class="secondary-font text-primary">$126.00</h3>
+
+                  <div class="d-flex flex-wrap mt-3">
+                    <a href="{% url 'cart' %}" class="btn-cart me-3 px-4 pt-3 pb-3">
+                      <h5 class="text-uppercase m-0">Add to Cart</h5>
+                    </a>
+                    <a href="{% if product.pk %}{% url 'add_to_wishlist' product.pk %}{% endif %}"  class="btn-wishlist px-4 pt-3 ">
+                      <iconify-icon icon="fluent:heart-28-filled" class="fs-5"></iconify-icon>
+                    </a>
+                  </div>
+
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <!-- <div class="z-1 position-absolute rounded-3 m-3 px-3 border border-dark-subtle">
+              New
+            </div> -->
+            <div class="card position-relative">
+              <a href="single-product.html"><img src="{% static 'images/assets/download (2).jpg' %}" class="img-fluid rounded-4" alt="image"></a>
+              <div class="card-body p-0">
+                <a href="single-product.html">
+                  <h3 class="card-title pt-4 m-0">brown flare skirt</h3>
+                </a>
+
+                <div class="card-text">
+                  <span class="rating secondary-font">
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    5.0</span>
+
+                  <h3 class="secondary-font text-primary">$31.00</h3>
+
+                  <div class="d-flex flex-wrap mt-3">
+                    <a href="{% url 'cart' %}" class="btn-cart me-3 px-4 pt-3 pb-3">
+                      <h5 class="text-uppercase m-0">Add to Cart</h5>
+                    </a>
+                    <a href="{% if product.pk %}{% url 'add_to_wishlist' product.pk %}{% endif %}"  class="btn-wishlist px-4 pt-3 ">
+                      <iconify-icon icon="fluent:heart-28-filled" class="fs-5"></iconify-icon>
+                    </a>
+                  </div>
+
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="z-1 position-absolute rounded-3 m-3 px-3 border border-dark-subtle">
+              -10%
+            </div>
+            <div class="card position-relative">
+              <a href="single-product.html"><img src="{% static 'images/assets/bigpic.jpg' %}" class="img-fluid rounded-4" alt="image"></a>
+              <div class="card-body p-0">
+                <a href="single-product.html">
+                  <h3 class="card-title pt-4 m-0">Party Outfit</h3>
+                </a>
+
+                <div class="card-text">
+                  <span class="rating secondary-font">
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    5.0</span>
+
+                  <h3 class="secondary-font text-primary">$57.00</h3>
+
+                  <div class="d-flex flex-wrap mt-3">
+                    <a href="{% url 'cart' %}" class="btn-cart me-3 px-4 pt-3 pb-3">
+                      <h5 class="text-uppercase m-0">Add to Cart</h5>
+                    </a>
+                    <a href="{% if product.pk %}{% url 'add_to_wishlist' product.pk %}{% endif %}"  class="btn-wishlist px-4 pt-3 ">
+                      <iconify-icon icon="fluent:heart-28-filled" class="fs-5"></iconify-icon>
+                    </a>
+                  </div>
+
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <!-- <div class="z-1 position-absolute rounded-3 m-3 px-3 border border-dark-subtle">
+              New
+            </div> -->
+            <div class="card position-relative">
+              <a href="single-product.html"><img src="{% static 'images/item4.jpg' %}" class="img-fluid rounded-4" alt="image"></a>
+              <div class="card-body p-0">
+                <a href="single-product.html">
+                  <h3 class="card-title pt-4 m-0">Grey hoodie</h3>
+                </a>
+
+                <div class="card-text">
+                  <div class="rating secondary-font">
+                    {% for _ in product.stars %}
+                        <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                    {% endfor %}
+                    {% for _ in product.empty_stars %}
+                        <iconify-icon icon="clarity:star-line" class="text-muted"></iconify-icon>
+                    {% endfor %}
+                    {{ product.rating }}
+
+                  <h3 class="secondary-font text-primary">$18.00</h3>
+
+                  <div class="d-flex flex-wrap mt-3">
+                    <a href="{% url 'cart' %}" class="btn-cart me-3 px-4 pt-3 pb-3">
+                      <h5 class="text-uppercase m-0">Add to Cart</h5>
+                    </a>
+                    <a href="{% if product.pk %}{% url 'add_to_wishlist' product.pk %}{% endif %}"  class="btn-wishlist px-4 pt-3 ">
+                      <iconify-icon icon="fluent:heart-28-filled" class="fs-5"></iconify-icon>
+                    </a>
+                  </div>
+
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      <!-- / category-carousel -->
+
+
+    </div>
+  </section>
+
+  
+  
+  <section id="service">
+    <div class="container py-5 my-5">
+      <div class="row g-md-5 pt-4">
+        <div class="col-md-3 my-3">
+          <div class="card">
+            <div>
+              <iconify-icon class="service-icon text-primary" icon="la:shopping-cart"></iconify-icon>
+            </div>
+            <h3 class="card-title py-2 m-0">Free Delivery</h3>
+            <div class="card-text">
+              <p class="blog-paragraph fs-6"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 my-3">
+          <div class="card">
+            <div>
+              <iconify-icon class="service-icon text-primary" icon="la:user-check"></iconify-icon>
+            </div>
+            <h3 class="card-title py-2 m-0">100% secure payment</h3>
+            <div class="card-text">
+              <p class="blog-paragraph fs-6"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 my-3">
+          <div class="card">
+            <div>
+              <iconify-icon class="service-icon text-primary" icon="la:tag"></iconify-icon>
+            </div>
+            <h3 class="card-title py-2 m-0">Daily Offer</h3>
+            <div class="card-text">
+              <p class="blog-paragraph fs-6"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 my-3">
+          <div class="card">
+            <div>
+              <iconify-icon class="service-icon text-primary" icon="la:award"></iconify-icon>
+            </div>
+            <h3 class="card-title py-2 m-0">Quality guarantee</h3>
+            <div class="card-text">
+              <p class="blog-paragraph fs-6"></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="insta" class="my-5">
+    <div class="row g-0 py-5">
+      <div class="col instagram-item  text-center position-relative">
+        <div class="icon-overlay d-flex justify-content-center position-absolute">
+          <iconify-icon class="text-white" icon="ri:tiktok-line"></iconify-icon>
+        </div>
+        <a href="https://www.tiktok.com/@evalineappiah">
+          <img src="{% static 'images/assets/down1.jpg' %}" alt="insta-img" class="img-fluid rounded-3">
+        </a>
+      </div>
+      <div class="col instagram-item  text-center position-relative">
+        <div class="icon-overlay d-flex justify-content-center position-absolute">
+          <iconify-icon class="text-white" icon="la:instagram"></iconify-icon>
+        </div>
+        <a href="#">
+          <img src="{% static 'images/assets/down2.jpg' %}" alt="insta-img" class="img-fluid rounded-3">
+        </a>
+      </div>
+      <div class="col instagram-item  text-center position-relative">
+        <div class="icon-overlay d-flex justify-content-center position-absolute">
+          <iconify-icon class="text-white" icon="la:instagram"></iconify-icon>
+        </div>
+        <a href="#">
+          <img src="{% static 'images/assets/down3.jpg' %}" alt="insta-img" class="img-fluid rounded-3">
+        </a>
+      </div>
+      <div class="col instagram-item  text-center position-relative">
+        <div class="icon-overlay d-flex justify-content-center position-absolute">
+          <iconify-icon class="text-white" icon="ri:tiktok-line"></iconify-icon>
+        </div>
+        <a href="https://www.tiktok.com/@evalineappiah">
+          <img src="{% static 'images/assets/down4.jpg' %}" alt="insta-img" class="img-fluid rounded-3">
+        </a>
+      </div>
+      <div class="col instagram-item  text-center position-relative">
+        <div class="icon-overlay d-flex justify-content-center position-absolute">
+          <iconify-icon class="text-white" icon="la:instagram"></iconify-icon>
+        </div>
+        <a href="#">
+          <img src="{% static 'images/assets/down8.jpg' %}" alt="insta-img" class="img-fluid rounded-3">
+        </a>
+      </div>
+      <div class="col instagram-item  text-center position-relative">
+        <div class="icon-overlay d-flex justify-content-center position-absolute">
+          <iconify-icon class="text-white" icon="la:instagram"></iconify-icon>
+        </div>
+        <a href="#">
+          <img src="{% static 'images/assets/down6.jpg' %}" alt="insta-img" class="img-fluid rounded-3">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {% endblock %}
+
+ 

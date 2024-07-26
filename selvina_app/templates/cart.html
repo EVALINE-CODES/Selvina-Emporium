@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <h2 class="fw-bold text-center mb-4">Cart</h2>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="box-element">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in items %}
+                        <tr>
+                            <td>{{ item.product.name }}</td>
+                            <td>${{ item.product.price }}</td>
+                            <td>
+                                <div class="input-group">
+                                    <button class="btn btn-outline-secondary" type="button" data-action="remove" data-product="{{ item.product.id }}">-</button>
+                                    <span class="input-group-text">{{ item.quantity }}</span>
+                                    <button class="btn btn-outline-secondary" type="button" data-action="add" data-product="{{ item.product.id }}">+</button>
+                                </div>
+                            </td>
+                            <td>${{ item.get_total }}</td>
+                            <td>
+                                <form action="{% url 'remove_from_cart' item.id %}" method="post" class="d-inline">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Remove</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="box-element">
+                <h4>Cart Summary</h4>
+                <p>Total Items: {{ order.get_cart_items }}</p>
+                <p>Total: ${{ order.get_cart_total }}</p>
+                <a href="{% url 'checkout' %}" class="btn btn-primary">Proceed to Checkout</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+	function updateCart(button) {
+		const productId = button.getAttribute('data-product');
+		const action = button.getAttribute('data-action');
+	
+		// Send AJAX request to update cart
+		fetch('/update-cart/', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				'X-CSRFToken': csrftoken,
+			},
+			body: JSON.stringify({ productId: productId, action: action }),
+		})
+		.then((response) => {
+			return response.json();
+		})
+		.then((data) => {
+			console.log('Data:', data);
+			location.reload();
+		})
+		.catch((error) => {
+			console.error('Error:', error);
+		});
+	}
+	
+</script>
+
+{% endblock content %}

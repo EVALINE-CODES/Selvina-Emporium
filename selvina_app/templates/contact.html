@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load solo_tags %}
+
+<style>
+    
+.contact-section {
+    padding: 80px 0;
+}
+
+.contact-info {
+    margin-bottom: 30px;
+}
+
+.contact-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.form-contact {
+    background: #f6f6f6;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.form-contact .form-group {
+    margin-bottom: 20px;
+}
+
+.form-contact textarea {
+    height: 180px;
+}
+
+.form-contact .form-action {
+    text-align: right;
+}
+
+.button-contactForm {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-contactForm:hover {
+    background-color: #0056b3;
+}
+
+</style>
+{% block content %}
+
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-3 offset-lg-1">
+                    <div class="media contact-info">
+                        <span class="contact-info__icon"><i class="ti-home"></i></span>
+                        <div class="media-body">
+                            <h3 style="color: aliceblue;">{{url_configuration.location}}</h3>
+                        </div>
+                    </div>
+                    <div class="media contact-info">
+                        <span class="contact-info__icon"><iconify-icon icon="fluent-mdl2:date-time" class="fs-4 position-relative"></iconify-icon></span>
+                        <div class="media-body">
+                            <h3><a style="color: aliceblue;" href="tel:+233274813033">{{url_configuration.contact}}</a>
+                            </h3>
+                            <p>Mon to Fri 9am to 6pm</p>
+                        </div>
+
+                    </div>
+                    <div class="media contact-info">
+                        <span class="contact-info__icon"><iconify-icon icon="icon-park:email-block" class="fs-4 position-relative"></iconify-icon></span>
+                        <div class="media-body">
+                            <h3><a style="color: black;"
+                                    href="mailto:bubueva@gmail.com">bubueva@gmail.com</a></h3>
+                            <p>Send us your email anytime!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <h2 class="contact-title">Get in Touch</h2>
+
+                </div>
+                <div class="col-lg-8">
+                    <form class="form-contact contact_form" action="{% url 'contact_submit' %}" method="post"
+                        id="contactForm" novalidate="novalidate">
+
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9"
+                                        placeholder="Enter your message here" required>{{form.message }}</textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control" name="name" id="name" type="text"
+                                        placeholder="Enter your name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control" name="email" id="email" type="email"
+                                        placeholder="Enter email address" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control" name="phone" id="phone" type="tel"
+                                        placeholder="Enter your phone number" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control" name="address" id="address" type="text"
+                                        placeholder="Enter your address" required>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <input class="form-control" name="subject" id="subject" type="text"
+                                        placeholder="Enter Subject" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-action">
+                            <button type="submit" class="button button-contactForm boxed-btn">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

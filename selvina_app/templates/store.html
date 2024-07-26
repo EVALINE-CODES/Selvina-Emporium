@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load static %}
+<style>
+  .filter-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #f0f0f0;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .filter-button.active {
+    background-color: #333;
+    color: #fff;
+  }
+
+  .btn-outline-dark svg {
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+
+  .card {
+    border: none;
+    transition: transform 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .rating {
+    margin-bottom: 1rem;
+  }
+
+  .rating iconify-icon {
+    font-size: 1.2rem;
+    margin-right: 0.2rem;
+  }
+
+  .btn-cart,
+  .btn-wishlist {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+  }
+</style>
+{% block content %}
+<section id="foodie" class="my-5">
+  <div class="container py-5">
+    <div class="section-header">
+      <h2 class="display-3 fw-normal text-center mb-5">FASHIONS</h2>
+      
+      </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+      {% for product in products %}
+      <div class="col">
+        <div class="card">
+          <a href="{% url 'product_detail' product.pk%}"><img src="{{ product.image.url }}" class="card-img-top img-fluid rounded-4" alt="image"></a>
+          <div class="card-body">
+            <a href="{% url 'product_detail' product.pk %}"><h3 class="card-title">{{ product.name }}</h3></a>
+            <div class="rating">
+              {% for _ in product.stars %}
+              <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+              {% endfor %}
+              {{ product.rating }}
+            </div>
+            <h3 class="text-primary">${{ product.price }}</h3>
+            <div class="d-flex flex-wrap mt-3">
+              <a href="{% url 'add_to_cart' product.pk %}" class="btn btn-primary me-2">Add to Cart</a>
+              {% comment %} <a href="{% url 'cart' product.id %}" class="btn btn-primary btn-cart me-3">Add to Cart</a> {% endcomment %}
+              <a href="{% url 'add_to_wishlist' product.id %}" class="btn btn-secondary btn-wishlist"><iconify-icon icon="fluent:heart-28-filled"
+                  class="fs-5"></iconify-icon></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Pagination -->
+<div class="pagination justify-content-center">
+  {% if products.has_previous %}
+      <a href="?page=1" class="page-link">&laquo; First</a>
+      <a href="?page={{ products.previous_page_number }}" class="page-link">&lsaquo; Previous</a>
+  {% endif %}
+  {% for num in products.paginator.page_range %}
+      {% if products.number == num %}
+          <span class="page-link current">{{ num }}</span>
+      {% else %}
+          <a href="?page={{ num }}" class="page-link">{{ num }}</a>
+      {% endif %}
+  {% endfor %}
+  {% if products.has_next %}
+      <a href="?page={{ products.next_page_number }}" class="page-link">Next &rsaquo;</a>
+      <a href="?page={{ products.paginator.num_pages }}" class="page-link">Last &raquo;</a>
+  {% endif %}
+</div>
+<!-- End Pagination -->
+
+</section>
+
+
+{% endblock %}

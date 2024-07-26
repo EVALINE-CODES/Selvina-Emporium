@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load solo_tags %}
+{% load static %}
+<style>
+    .about-area {
+        padding: 50px 0; 
+        background-color: #f8f9fa; 
+    }
+
+    .about-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .about-text {
+        flex-basis: 50%;
+        padding: 30px;
+        background-color: #ffffff; 
+        border-radius: 10px; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    }
+
+    .about-text h2 {
+        font-size: 24px;
+        margin-bottom: 20px; 
+    }
+
+    .about-text p {
+        margin-bottom: 20px; 
+    }
+
+    .about-image {
+        flex-basis: 45%;
+    }
+
+    .about-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+        .about-content {
+            flex-direction: column; 
+        }
+
+        .about-text, .about-image {
+            flex-basis: 100%; 
+            margin-bottom: 20px; 
+        }
+    }
+</style>
+
+{% block content %}
+    <section class="about-area">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Us</h2>
+                    <p>{{ url_configuration.about_us }}</p>
+                </div>
+                <div class="about-image">
+                    <img src="{{ url_configuration.about_us_img.url }}" alt="About Us Image">
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
